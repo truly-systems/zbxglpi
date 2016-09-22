@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>3.0</version>
-    <date>2016-07-27T00:30:04Z</date>
+    <date>2016-09-22T04:43:36Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -62,7 +62,7 @@
                     <snmpv3_privpassphrase/>
                     <formula>1</formula>
                     <delay_flex/>
-                    <params>SELECT count(*) FROM tm_glpi.glpi_changes where status in (1,2,3,4);</params>
+                    <params>SELECT count(*) FROM glpi_changes where status in (1,2,3,4);</params>
                     <ipmi_sensor/>
                     <data_type>0</data_type>
                     <authtype>0</authtype>
@@ -149,7 +149,7 @@
                     <formula>1</formula>
                     <delay_flex/>
                     <params>select count(*) from glpi_tickets&#13;
-WHERE `glpi_tickets`.`is_deleted` = '0' AND ( (IF(`glpi_tickets`.`due_date` IS NOT NULL AND `glpi_tickets`.`status` &lt;&gt; 4 AND (`glpi_tickets`.`solvedate` &gt; `glpi_tickets`.`due_date` OR (`glpi_tickets`.`solvedate` IS NULL AND `glpi_tickets`.`due_date` &lt; NOW())), 1, 0) = 1) )</params>
+WHERE `glpi_tickets`.`is_deleted` = '0' AND glpi_tickets.status = 1 or status = 2 or status = 3 or status = 4; ( (IF(`glpi_tickets`.`due_date` IS NOT NULL AND `glpi_tickets`.`status` &lt;&gt; 4 AND (`glpi_tickets`.`solvedate` &gt; `glpi_tickets`.`due_date` OR (`glpi_tickets`.`solvedate` IS NULL AND `glpi_tickets`.`due_date` &lt; NOW())), 1, 0) = 1) )</params>
                     <ipmi_sensor/>
                     <data_type>0</data_type>
                     <authtype>0</authtype>
@@ -235,7 +235,7 @@ WHERE `glpi_tickets`.`is_deleted` = '0' AND ( (IF(`glpi_tickets`.`due_date` IS N
                     <snmpv3_privpassphrase/>
                     <formula>1</formula>
                     <delay_flex/>
-                    <params>SELECT count(*) FROM glpimaster.glpi_problems where status IN (1,2,3,4);</params>
+                    <params>SELECT count(*) FROM glpi_problems where status IN (1,2,3,4);</params>
                     <ipmi_sensor/>
                     <data_type>0</data_type>
                     <authtype>0</authtype>
@@ -321,8 +321,8 @@ WHERE `glpi_tickets`.`is_deleted` = '0' AND ( (IF(`glpi_tickets`.`due_date` IS N
                     <snmpv3_privpassphrase/>
                     <formula>1</formula>
                     <delay_flex/>
-                    <params>select count(*)&#13;
-FROM `glpi_queuedmails`</params>
+                    <params>select  count(*)&#13;
+FROM `glpi_queuedmails` where is_deleted = 0</params>
                     <ipmi_sensor/>
                     <data_type>0</data_type>
                     <authtype>0</authtype>
@@ -350,7 +350,7 @@ FROM `glpi_queuedmails`</params>
                 </macro>
                 <macro>
                     <macro>{$PASS}</macro>
-                    <value>truly123.</value>
+                    <value>password</value>
                 </macro>
                 <macro>
                     <macro>{$USER}</macro>
