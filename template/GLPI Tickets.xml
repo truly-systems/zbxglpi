@@ -897,11 +897,7 @@ where DATE_FORMAT(tb1.date, '%Y-%m') = DATE_FORMAT(NOW(), '%Y-%m')</params>
                 <tag>
                     <tag>support</tag>
                     <value>trulysystems</value>
-                </tag>
-                <tag>
-                    <tag>system</tag>
-                    <value>lince</value>
-                </tag>
+                </tag>                
             </tags>
         </trigger>
         <trigger>
@@ -930,11 +926,7 @@ where DATE_FORMAT(tb1.date, '%Y-%m') = DATE_FORMAT(NOW(), '%Y-%m')</params>
                 <tag>
                     <tag>support</tag>
                     <value>trulysystems</value>
-                </tag>
-                <tag>
-                    <tag>system</tag>
-                    <value>lince</value>
-                </tag>
+                </tag>                
             </tags>
         </trigger>
     </triggers>
