@@ -2,7 +2,7 @@
 
 # Monitor GLPI on Zabbix #
 
-This template help to monitor GLPI on Zabbix
+This template help to monitor GLPI data on Zabbix
 
 You can monitor
 
@@ -15,5 +15,4 @@ Monitor
 ## You can monitor ##
 
 * GLPI tickets
-* GLPI Mail Queue
-* GLPI Assets
+* GLPI Mail Queue* 

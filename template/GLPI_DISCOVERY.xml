@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>3.4</version>
+    <date>2018-05-23T02:03:06Z</date>
+    <groups>
+        <group>
+            <name>GLPI/ENTIDADES</name>
+        </group>
+        <group>
+            <name>Templates/Applications</name>
+        </group>
+        <group>
+            <name>Templates/Truly</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <template>GLPI Discovery</template>
+            <name>GLPI Discovery</name>
+            <description>GLPI Discovery - Truly Systems</description>
+            <groups>
+                <group>
+                    <name>Templates/Applications</name>
+                </group>
+                <group>
+                    <name>Templates/Truly</name>
+                </group>
+            </groups>
+            <applications/>
+            <items/>
+            <discovery_rules>
+                <discovery_rule>
+                    <name>Discovery Entities</name>
+                    <type>11</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>db.odbc.discovery[discovery.entities.glpi,{$ODBC}]</key>
+                    <delay>30s</delay>
+                    <status>0</status>
+                    <allowed_hosts/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params>select name as HOST_HOST,&#13;
+id as ID&#13;
+ from glpi_entities</params>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <filter>
+                        <evaltype>0</evaltype>
+                        <formula/>
+                        <conditions/>
+                    </filter>
+                    <lifetime>30d</lifetime>
+                    <description/>
+                    <item_prototypes/>
+                    <trigger_prototypes/>
+                    <graph_prototypes/>
+                    <host_prototypes>
+                        <host_prototype>
+                            <host>{#ID}</host>
+                            <name>{#HOST_HOST}</name>
+                            <status>0</status>
+                            <group_links>
+                                <group_link>
+                                    <group>
+                                        <name>GLPI/ENTIDADES</name>
+                                    </group>
+                                </group_link>
+                            </group_links>
+                            <group_prototypes/>
+                            <templates>
+                                <template>
+                                    <name>GLPI Ticket</name>
+                                </template>
+                            </templates>
+                        </host_prototype>
+                    </host_prototypes>
+                    <jmx_endpoint/>
+                </discovery_rule>
+            </discovery_rules>
+            <httptests/>
+            <macros/>
+            <templates/>
+            <screens/>
+        </template>
+    </templates>
+</zabbix_export>
